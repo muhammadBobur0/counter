@@ -30,7 +30,9 @@ let Card = () => {
 							placeholder='Search for a country…'
 							type='serach'
 						/>
-						<button type='submit'>send</button>
+						<button className='btn' type='submit'>
+							send
+						</button>
 					</form>
 					<select
 						onChange={(evt) =>
