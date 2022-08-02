@@ -1,0 +1,60 @@
+
+
+.header{
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+  padding: 23px 0px;
+  color: #111517;
+}
+
+
+.darck {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+
+
+.tittle {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  margin: 0;
+}
+
+
+
+.iner {
+  display: flex;
+  align-items: center;
+}
+
+.darck {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  border: none;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 0;
+}
+
+.darck::before{
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin-right: 11px;
+  background-image: url(./images/Path.svg);
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: center;
+  content: "";
+}
+
+
+.img {
+  width: 15px;
+  height: 13px;
+}
