@@ -1,5 +1,4 @@
-import Elliststayle from './ellist.css';
-import elimg from './images/germany.png';
+import './ellist.css';
 
 let item = (props) => {
 	let { name, region, flags, population, capital } = props.name;

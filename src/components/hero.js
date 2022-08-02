@@ -1,4 +1,4 @@
-import herocss from './hero.css';
+import './hero.css';
 import List from './list';
 
 let hero = () => {
