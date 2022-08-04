@@ -1,4 +1,5 @@
 import './ellist.css';
+import { Link } from 'react-router-dom';
 
 let item = (props) => {
 	let { name, region, flags, population, capital } = props.name;
@@ -11,6 +12,9 @@ let item = (props) => {
 				<p className='text'>Population: {population}</p>
 				<p className='text'>Region: {region}</p>
 				<p className='text'>Capital: {capital}</p>
+				<Link className='link' to={`/counter/${name.common}`}>
+					learn more
+				</Link>
 			</div>
 		</li>
 	);

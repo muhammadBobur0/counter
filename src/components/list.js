@@ -1,17 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './ellist.css';
 import Item from './item';
+import { useFetch } from '../hooks/useFetch';
 import Svg from './images/Spinner-1.1s-203px.svg';
 
 let Card = () => {
-	let [todos, setTodos] = useState([]);
 	let [value, setvalue] = useState('');
+	let [url, setUrl] = useState('https://restcountries.com/v3.1/all');
 
-	useEffect(() => {
-		fetch('https://restcountries.com/v3.1/all')
-			.then((res) => res.json())
-			.then((data) => setTodos([...data]));
-	}, []);
+	const { data } = useFetch(url);
 
 	return (
 		<section className='section'>
@@ -20,9 +17,7 @@ let Card = () => {
 					<form
 						onSubmit={(evt) => {
 							evt.preventDefault();
-							fetch(`https://restcountries.com/v3.1/name/${value}`)
-								.then((res) => res.json())
-								.then((data) => setTodos([...data]));
+							setUrl(`https://restcountries.com/v3.1/name/${value}`);
 						}}>
 						<input
 							onChange={(evt) => setvalue(evt.target.value.toLowerCase())}
@@ -36,11 +31,9 @@ let Card = () => {
 					</form>
 					<select
 						onChange={(evt) =>
-							fetch(
+							setUrl(
 								`https://restcountries.com/v3.1/region/${evt.target.value.toLocaleLowerCase()}`,
 							)
-								.then((res) => res.json())
-								.then((data) => setTodos([...data]))
 						}
 						className='select'>
 						<option value='defaultValue'> Filter by Region </option>
@@ -52,11 +45,12 @@ let Card = () => {
 					</select>
 				</div>
 
-				{todos.length ? (
+				{data.length ? (
 					<ul className='list'>
-						{todos.map((el) => {
-							return <Item key={el.name.common} name={el} />;
-						})}
+						{data &&
+							data.map((el) => {
+								return <Item key={el.name.common} name={el} />;
+							})}
 					</ul>
 				) : (
 					<img className='loading' src={Svg} alt='loadin' />
