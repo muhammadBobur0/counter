@@ -7,10 +7,7 @@ justify-content: space-between;
 flex-wrap: wrap;
 }
 
-.section {
-  padding-top: 48px;
-  padding-bottom: 45px;
-}
+
 
 .btn{
   clip: rect(0 0 0 0);
@@ -27,11 +24,6 @@ flex-wrap: wrap;
   margin: 0px auto;
 }
 
-.search{
-  display: flex;
-  align-items: center;
-  margin-bottom: 48px;
-}
 
 .text {
 font-weight: 600;

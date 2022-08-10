@@ -1,14 +1,29 @@
 import './header.css';
+import { useContext } from 'react';
+import { Themcontect } from '../context/usetoken';
 
-const headers = () => {
+const Headers = () => {
+	const { thema, setthema } = useContext(Themcontect);
 	return (
-		<header className='header'>
-			<div className='container iner'>
-				<h1 className='tittle'>Where in the world?</h1>
-				<button className='darck'>Dark Mode</button>
-			</div>
-		</header>
+		<div className='head'>
+			<header className={thema}>
+				<div className='container iner'>
+					<h1 className='tittle'>Where in the world?</h1>
+					<button
+						onClick={() => {
+							if (thema === 'ligt') {
+								setthema('dark');
+							} else {
+								setthema('ligt');
+							}
+						}}
+						className='darck'>
+						Dark Mode
+					</button>
+				</div>
+			</header>
+		</div>
 	);
 };
 
-export default headers;
+export default Headers;

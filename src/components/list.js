@@ -3,15 +3,19 @@ import './ellist.css';
 import Item from './item';
 import { useFetch } from '../hooks/useFetch';
 import Svg from './images/Spinner-1.1s-203px.svg';
+import { useContext } from 'react';
+import { Themcontect } from '../context/usetoken';
 
 let Card = () => {
 	let [value, setvalue] = useState('');
 	let [url, setUrl] = useState('https://restcountries.com/v3.1/all');
 
+	const { thema } = useContext(Themcontect);
+
 	const { data } = useFetch(url);
 
 	return (
-		<section className='section'>
+		<section className={thema}>
 			<div className='container'>
 				<div className='search'>
 					<form
