@@ -255,7 +255,7 @@
   .cou-box {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
   }
   
   .container{
@@ -300,8 +300,6 @@
   
   
   
-  
-  
   .Search{
     display: block;
     width: 280px;
@@ -316,7 +314,7 @@
     margin: 0px auto;
     max-width: 300px;
     margin-bottom: 40px;
-    align-items: start;
+    align-items: flex-start;
     
   }
   
